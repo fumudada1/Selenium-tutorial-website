@@ -7,6 +7,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="inquiry.css">
+  <style>
+    /* 讓 Selenium 能順利點擊「送出」：導覽列不固定、版面更緊湊，按鈕不易落在視窗邊緣或被遮住 */
+    .site-header { position: static; }
+    .inquiry-page { padding: 24px 0 120px; }
+    .page-sub { margin-bottom: 16px; }
+    .inquiry-form { padding: 20px; }
+    .field { margin-bottom: 12px; }
+    .actions .btn { scroll-margin: 120px; }
+  </style>
 </head>
 <body>
 
