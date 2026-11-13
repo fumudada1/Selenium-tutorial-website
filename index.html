@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HP 14吋商用筆電 | Selenium 練習網站</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <div class="brand"><i class="fa-solid fa-laptop-code"></i> <span id="site-brand">Selenium 練習場</span></div>
+      <nav class="main-nav">
+        <a name="nav-link" href="#overview"><i class="fa-solid fa-house"></i> 產品總覽</a>
+        <a name="nav-link" href="#features"><i class="fa-solid fa-star"></i> 特色</a>
+        <a name="nav-link" href="#specs"><i class="fa-solid fa-microchip"></i> 規格</a>
+        <a name="nav-link" href="inquiry.html"><i class="fa-solid fa-clipboard-question"></i> 產品詢問單</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 產品總覽 -->
+    <section class="hero" id="overview">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <span class="badge" id="brand-badge"><i class="fa-solid fa-certificate"></i> HP 惠普</span>
+          <h1 id="product-title">HP 惠普 14吋商用筆電 銀色</h1>
+          <p id="product-model" class="model">Ultra5-125U / 16G / 512G / WUXGA / Windows 11 / 14</p>
+          <p class="lead" id="product-desc">搭載 Intel Core Ultra 5 125U 處理器與 Intel AI Boost NPU，兼顧效能與低功耗，適合日常辦公、多工處理與商務攜帶。</p>
+          <div class="price-box">
+            <span class="old-price" id="old-price">NT$42,900</span>
+            <span class="price" id="price">NT$39,900</span>
+          </div>
+          <div class="hero-actions">
+            <button id="btn-add-cart" name="add-to-cart" class="btn btn-primary" type="button"><i class="fa-solid fa-cart-plus"></i> 加入購物車</button>
+            <button id="btn-favorite" name="favorite" class="btn btn-outline" type="button"><i class="fa-regular fa-heart"></i> 收藏</button>
+            <span class="cart-badge"><i class="fa-solid fa-basket-shopping"></i> 購物車：<strong id="cart-count">0</strong> 台</span>
+          </div>
+          <p id="action-message" class="action-message" role="status"></p>
+        </div>
+        <div class="hero-visual">
+          <img id="product-image" name="product-image" class="product-image" src="https://img.pchome.com.tw/cs/items/DHAGBMA900K2OKN/000007_1781087230.jpg" alt="HP 惠普 14吋商用筆電 銀色" onerror="this.style.display='none';document.getElementById('image-fallback').hidden=false;">
+          <div class="laptop" id="image-fallback" hidden aria-hidden="true">
+            <div class="laptop-screen"><i class="fa-solid fa-laptop"></i><span>HP 14</span></div>
+            <div class="laptop-base"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 特色（class name 練習） -->
+    <section class="section" id="features">
+      <div class="container">
+        <h2 class="section-title"><i class="fa-solid fa-star"></i> 產品特色</h2>
+        <p class="section-sub">每張卡片都有相同的 class <code>feature-card</code>，適合練習 <code>find_elements(By.CLASS_NAME, ...)</code></p>
+        <div class="card-grid" id="feature-list">
+          <article class="feature-card">
+            <i class="fa-solid fa-brain card-icon"></i>
+            <h3 class="feature-title">Intel AI Boost NPU</h3>
+            <p class="feature-text">Core Ultra 5 125U 內建 NPU，支援本機 AI 加速與 Windows Copilot+ 之外的日常 AI 應用。</p>
+          </article>
+          <article class="feature-card">
+            <i class="fa-solid fa-bolt card-icon"></i>
+            <h3 class="feature-title">12 核心 14 執行緒</h3>
+            <p class="feature-text">2 效能核心 + 8 效率核心 + 2 低功耗效率核心，最高睿頻 4.3 GHz，多工順暢。</p>
+          </article>
+          <article class="feature-card">
+            <i class="fa-solid fa-display card-icon"></i>
+            <h3 class="feature-title">14吋 WUXGA 霧面螢幕</h3>
+            <p class="feature-text">1920×1200、16:10 比例，垂直顯示空間更多，長時間閱讀文件更舒適。</p>
+          </article>
+          <article class="feature-card">
+            <i class="fa-solid fa-battery-full card-icon"></i>
+            <h3 class="feature-title">快充長效電池</h3>
+            <p class="feature-text">56 Whr 三芯電池，支援快速充電，約 30 分鐘可充至 50%。</p>
+          </article>
+          <article class="feature-card">
+            <i class="fa-solid fa-plug card-icon"></i>
+            <h3 class="feature-title">豐富連接埠</h3>
+            <p class="feature-text">2× USB-C、2× USB-A、HDMI 2.1、RJ-45 網路孔與耳機麥克風combo孔。</p>
+          </article>
+          <article class="feature-card">
+            <i class="fa-solid fa-video card-icon"></i>
+            <h3 class="feature-title">1080p 視訊鏡頭</h3>
+            <p class="feature-text">FHD 網路攝影機附實體隱私快門，搭配 Poly Studio 音效，遠端會議更安心。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 規格（tag name 練習） -->
+    <section class="section alt" id="specs">
+      <div class="container">
+        <h2 class="section-title"><i class="fa-solid fa-microchip"></i> 詳細規格</h2>
+        <p class="section-sub">規格表使用 <code>&lt;table&gt;</code>、<code>&lt;tr&gt;</code>、<code>&lt;td&gt;</code>，可練習 <code>By.TAG_NAME</code></p>
+        <div class="spec-layout">
+          <table id="spec-table" class="spec-table">
+            <caption>HP 14吋商用筆電 規格表</caption>
+            <thead>
+              <tr><th>項目</th><th>規格內容</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><i class="fa-solid fa-microchip"></i> 處理器</td><td>Intel Core Ultra 5 125U（12 核 / 14 緒，最高 4.3 GHz，12MB 快取）</td></tr>
+              <tr><td><i class="fa-solid fa-memory"></i> 記憶體</td><td>16GB DDR5-5600，2 插槽，最高可擴充 32GB</td></tr>
+              <tr><td><i class="fa-solid fa-hard-drive"></i> 儲存空間</td><td>512GB PCIe NVMe SSD</td></tr>
+              <tr><td><i class="fa-solid fa-desktop"></i> 螢幕</td><td>14 吋 WUXGA (1920×1200) 16:10 霧面</td></tr>
+              <tr><td><i class="fa-solid fa-image"></i> 顯示晶片</td><td>Intel Graphics（4 Xe 核心）</td></tr>
+              <tr><td><i class="fa-brands fa-windows"></i> 作業系統</td><td>Windows 11</td></tr>
+              <tr><td><i class="fa-solid fa-wifi"></i> 無線網路</td><td>Intel AX211 Wi-Fi 6E + 藍牙 5.3</td></tr>
+              <tr><td><i class="fa-solid fa-battery-three-quarters"></i> 電池</td><td>3 芯 56 Whr 聚合物電池，支援快充</td></tr>
+              <tr><td><i class="fa-solid fa-weight-hanging"></i> 重量</td><td>約 1.4 公斤起</td></tr>
+              <tr><td><i class="fa-solid fa-ruler-combined"></i> 尺寸</td><td>31.9 × 22.4 × 1.7 公分</td></tr>
+              <tr><td><i class="fa-solid fa-palette"></i> 顏色</td><td>銀色</td></tr>
+            </tbody>
+          </table>
+
+          <aside class="spec-side">
+            <h3><i class="fa-solid fa-list-check"></i> 購買重點</h3>
+            <ul id="highlight-list">
+              <li>適合商務、文書與學生日常使用</li>
+              <li>記憶體可擴充至 32GB</li>
+              <li>無背光鍵盤、無數字鍵盤</li>
+              <li>未配置指紋辨識器</li>
+              <li>實體鏡頭隱私快門</li>
+            </ul>
+            <p class="note"><i class="fa-solid fa-circle-info"></i> 資料來源：PChome 24h 商品頁與 Intel ARK，查詢日期 2026-11-13，實際價格與規格以官方頁面為準。</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><i class="fa-solid fa-graduation-cap"></i> 本頁僅供 Selenium 教學練習使用，非 HP 或 PChome 官方網站。</p>
+      <p class="footer-links">
+        <a href="https://24h.pchome.com.tw/prod/DHAGHB-A900KBWCX" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> PChome 商品頁</a>
+        <a href="https://ark.intel.com/content/www/us/en/ark/products/237330.html" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Intel ARK</a>
+        <a href="#top"><i class="fa-solid fa-arrow-up"></i> 回到頂端</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

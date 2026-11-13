@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>產品詢問單 | Selenium 表單練習</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="inquiry.css">
+</head>
+<body>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <div class="brand"><i class="fa-solid fa-laptop-code"></i> <span>Selenium 練習場</span></div>
+      <nav class="main-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i> 產品介紹頁</a>
+        <a href="inquiry.html"><i class="fa-solid fa-clipboard-question"></i> 產品詢問單</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="inquiry-page">
+    <div class="container">
+      <h1 id="page-title" class="page-title"><i class="fa-solid fa-clipboard-question"></i> 產品詢問單</h1>
+      <p class="page-sub">練習 <code>send_keys()</code>、<code>click()</code>、<code>clear()</code>：填寫表單後按下送出，下方會出現送出結果。</p>
+
+      <form id="inquiry-form" class="inquiry-form" action="#" method="post" novalidate>
+        <div class="field">
+          <label for="customer-name"><i class="fa-solid fa-user"></i> 姓名</label>
+          <input type="text" id="customer-name" name="customerName" placeholder="請輸入姓名" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="customer-phone"><i class="fa-solid fa-phone"></i> 連絡電話</label>
+          <input type="tel" id="customer-phone" name="customerPhone" placeholder="例如：0912-345-678" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="product-select"><i class="fa-solid fa-box-open"></i> 產品</label>
+          <select id="product-select" name="product">
+            <option value="">-- 請選擇產品 --</option>
+            <option value="HP 14吋商用筆電 銀色">HP 14吋商用筆電 銀色</option>
+            <option value="HP 15吋商用筆電 銀色">HP 15吋商用筆電 銀色</option>
+            <option value="HP 無線滑鼠">HP 無線滑鼠</option>
+          </select>
+        </div>
+
+        <p id="form-error" class="form-error" role="alert" hidden></p>
+
+        <div class="actions">
+          <button type="submit" id="btn-submit" name="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> 送出</button>
+          <button type="button" id="btn-clear-all" name="clearAll" class="btn btn-outline"><i class="fa-solid fa-eraser"></i> 清空欄位</button>
+        </div>
+      </form>
+
+      <section id="result-section" class="result-section" hidden>
+        <h2 class="result-title"><i class="fa-solid fa-table-list"></i> 送出結果</h2>
+        <table id="inquiry-table" class="inquiry-table">
+          <thead>
+            <tr>
+              <th>詢問單編號</th>
+              <th>姓名</th>
+              <th>連絡電話</th>
+              <th>選到的產品</th>
+            </tr>
+          </thead>
+          <tbody id="inquiry-body"></tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><i class="fa-solid fa-graduation-cap"></i> 本頁僅供 Selenium 教學練習使用，資料不會送到任何伺服器。</p>
+    </div>
+  </footer>
+
+  <script src="inquiry.js"></script>
+</body>
+</html>
